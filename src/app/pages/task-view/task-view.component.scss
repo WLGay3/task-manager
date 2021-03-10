@@ -60,10 +60,12 @@
 }
 
 .task {
+  display: flex;
   background: white;
   padding: 15px 20px;
   border-radius: 5px;
   margin-top: 10px;
+  align-items: center;
 
   &:not(.complete) {
     cursor: pointer;
@@ -75,13 +77,27 @@
 
     &:hover {
       box-shadow: 0 0 0 5px #4fcf6d8e;
+
+      .task-buttons {
+        opacity: 1;
+        transform: scale(1);
+      }
     }
   }
 
-
-  &.completed {
+  &.completed .task-text {
     text-decoration: line-through;
     opacity: 80%;
+  }
+
+  .task-text {
+    flex-grow: 1;
+  }
+
+  .task-buttons {
+    transition: opacity 0.2s ease, transform 0.2s;
+    opacity: 0;
+    transform: scale(0.85);
   }
 }
 
@@ -101,5 +117,15 @@
   border-top-right-radius: 8px;
   border-bottom-right-radius: 8px;
   padding: 42px;
+
+  .top-bar {
+    margin-bottom: 20px;
+    display:flex;
+    .title {
+      flex-grow: 1;
+      margin: 0;
+    }
+  }
+
 }
 

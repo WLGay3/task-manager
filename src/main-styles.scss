@@ -6,7 +6,7 @@
 $green: #5cb944;
 $gray: #999999;
 
-$light-green: #aaeb90;
+$light-green: #82b36f;
 $light: #f0f0f0;
 $dark-green: #163b0b;
 
@@ -27,6 +27,12 @@ $input-shadow: none;
 
 // Set custom global styles (will be applied to whole app)
 
+
+.account {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
 .buttons {
   margin-top: 10px;

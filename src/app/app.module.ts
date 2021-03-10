@@ -11,9 +11,8 @@ import { NewTaskComponent } from './pages/new-task/new-task.component';
 import { LogInComponent } from './pages/log-in/log-in.component';
 import { WebRequestInterceptor } from './web-req.interceptor';
 import { SignupPageComponent } from './pages/signup-page/signup-page.component';
-// import { RouterModule } from '@angular/router';
-
-
+import { EditListComponent } from './pages/edit-list/edit-list.component';
+import { EditTaskComponent } from './pages/edit-task/edit-task.component';
 
 @NgModule({
   declarations: [
@@ -22,14 +21,15 @@ import { SignupPageComponent } from './pages/signup-page/signup-page.component';
     NewListComponent,
     NewTaskComponent,
     LogInComponent,
-    SignupPageComponent
+    SignupPageComponent,
+    EditListComponent,
+    EditTaskComponent
 
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    // RouterModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: WebRequestInterceptor, multi: true }
