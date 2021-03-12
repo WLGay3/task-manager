@@ -45,6 +45,11 @@
   }
 }
 
+.logout {
+  text-align: center;
+  padding-top: 10px;
+}
+
 .plus-icon {
   margin-top: 5px;
   margin-left: 1px;
@@ -118,14 +123,15 @@
   border-bottom-right-radius: 8px;
   padding: 42px;
 
-  .top-bar {
-    margin-bottom: 20px;
-    display:flex;
-    .title {
-      flex-grow: 1;
-      margin: 0;
-    }
-  }
+}
 
+.top-bar {
+  margin-bottom: 20px;
+  display:flex;
+  align-items: center;
+  .title {
+    flex-grow: 1;
+    margin: 0;
+  }
 }
 

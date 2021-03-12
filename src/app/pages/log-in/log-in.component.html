@@ -19,6 +19,13 @@
         </span>
       </p>
     </div>
+
+    <div *ngIf="!validUser">
+      <div>
+        <p class="help is-danger">Email or password is invalid!</p>
+      </div>
+    </div>
+
     <div class="account">
 
       <a routerLink="/signup">Sign up for an account</a>

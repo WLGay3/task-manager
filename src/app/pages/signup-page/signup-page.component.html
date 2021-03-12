@@ -19,6 +19,13 @@
         </span>
       </p>
     </div>
+
+    <div *ngIf="!validEmail">
+      <div>
+        <p class="help is-danger">This email is invalid or already in use</p>
+      </div>
+    </div>
+
     <div class="account">
 
       <a routerLink="/login">Back to login</a>

@@ -10,6 +10,8 @@ import { AuthService } from 'src/app/auth.service';
 })
 export class SignupPageComponent implements OnInit {
 
+  validEmail = true;
+
   constructor(private authService: AuthService, private router: Router) { }
 
   ngOnInit(): void {
@@ -19,6 +21,10 @@ export class SignupPageComponent implements OnInit {
     this.authService.signup(email, password).subscribe((res: HttpResponse<any>) => {
       this.router.navigate(['/lists']);
       console.log(res);
+    }, (error) => {
+      if (error) {
+        this.validEmail = false;
+      }
     });
   }
 

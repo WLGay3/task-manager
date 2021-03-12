@@ -1,4 +1,5 @@
 import { HttpResponse } from '@angular/common/http';
+import { error } from '@angular/compiler/src/util';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/auth.service';
@@ -10,6 +11,8 @@ import { AuthService } from 'src/app/auth.service';
 })
 export class LogInComponent implements OnInit {
 
+  validUser = true;
+
   constructor(private authService: AuthService, private router: Router) { }
 
   ngOnInit(): void {
@@ -20,8 +23,13 @@ export class LogInComponent implements OnInit {
       if(res.status === 200) {
         //We have logged in successfully
         this.router.navigate(['/lists']);
+        this.validUser = true;
       }
       console.log(res);
+    }, (error) => {
+      if(error) {
+      this.validUser = false;
+      }
     });
   }
 }
